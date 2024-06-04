@@ -46,7 +46,6 @@ fn build_scores_table(results: String) -> HashMap<String, Team> {
         ] {
             let team = scores.entry(team_name.clone()).or_insert({
                 Team {
-                    name: team_name,
                     goals_scored: 0,
                     goals_conceded: 0,
                 }
