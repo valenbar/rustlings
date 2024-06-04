@@ -59,6 +59,7 @@
             rustlings
             rustfmt
             clippy
+            bacon
           ] ++ cargoBuildInputs;
         };
         apps = let
