@@ -44,7 +44,15 @@ fn result_with_list() -> Result<Vec<i32>, DivisionError> {
         .into_iter()
         .map(|n| divide(n, 27))
         .collect::<Vec<Result<i32,DivisionError>>>();
-    todo!("find any division error")
+    let mut results_iter = division_results.iter();
+    let mut results_vec: Vec<i32> = vec![];
+    while let Some(elem) = results_iter.next() {
+        match elem {
+            Ok(num) => results_vec.push(*num),
+            Err(err) => return Err(*err),
+        }
+    }
+    return Ok(results_vec);
 }
 
 // Complete the function and return a value of the correct type so the test
