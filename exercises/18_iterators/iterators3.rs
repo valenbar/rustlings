@@ -10,13 +10,13 @@
 // hint.
 
 
-#[derive(Debug, PartialEq, Eq)]
+#[derive(Debug, PartialEq, Eq, Copy, Clone)]
 pub enum DivisionError {
     NotDivisible(NotDivisibleError),
     DivideByZero,
 }
 
-#[derive(Debug, PartialEq, Eq)]
+#[derive(Debug, PartialEq, Eq, Copy, Clone)]
 pub struct NotDivisibleError {
     dividend: i32,
     divisor: i32,
